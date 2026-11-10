@@ -3,7 +3,7 @@ name: optimize-crawler-access
 description: "Finds and fixes what stops AI crawlers from reading a site, from robots.txt to edge blocks and JavaScript-only content. Use when ChatGPT, Claude or Perplexity should cite a site, or to block training bots."
 ---
 
-# AI crawler access
+# Optimize crawler access
 
 The goal is that search and user-triggered AI bots reach every public page while training bots follow the user's choice. A block can sit in the robots rules, in page headers and meta tags, in the Vercel Firewall or in Cloudflare in front of Vercel. Check all four layers, because a bot blocked at the edge never reads robots.txt. Then check that the page content is in the HTML the server sends, because most AI bots run no JavaScript.
 
