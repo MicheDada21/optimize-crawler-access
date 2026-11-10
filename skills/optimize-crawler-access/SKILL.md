@@ -1,5 +1,5 @@
 ---
-name: ai-crawler-access
+name: optimize-crawler-access
 description: "Audit and fix AI crawler access to a site, from robots.txt and Vercel or Cloudflare edge blocks to content that only appears with JavaScript. Use when ChatGPT, Claude or Perplexity should cite a site (AEO, GEO), or when the user wants AI training bots blocked."
 ---
 
