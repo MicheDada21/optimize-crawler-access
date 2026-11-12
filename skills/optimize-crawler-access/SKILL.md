@@ -31,7 +31,9 @@ Read [references/bots.md](references/bots.md) for the bot classes and their user
    grep -c "<sentence from the page>" page.html
    ```
 
-   Pick a sentence from the main text as a browser shows it. Curl runs no JavaScript, like the bots marked No in [references/bots.md](references/bots.md), so a count of 0 means those bots receive the page without its content. A 403, a 429 or a challenge page means an edge block. Curl only reproduces rules that match the user agent; rules for verified bots match by IP and need step 5. Complete when the table has a row per bot and path.
+   Pick a sentence from the main text as a browser shows it. Curl runs no JavaScript, like the bots marked No in [references/bots.md](references/bots.md), so a count of 0 means those bots receive the page without its content. A 403, a 429 or a challenge page means an edge block. Curl only reproduces rules that match the user agent; rules for verified bots match by IP and need step 5.
+
+   When the Browserbase `browse` CLI is installed, repeat each path from a datacenter IP, as real bots reach the site: `browse cloud fetch https://<domain>/<path> --format raw --output cloud.html`. It sends Browserbase's own user agent, so a block there that curl from this machine did not get points to an IP, ASN or bot-score rule for step 5. To take the sentence as a browser shows it, open the page with `browse open https://<domain>/<path> --remote` and read `browse get text body`. Without the CLI, keep curl and the local browser. Complete when the table has a row per bot and path.
 
 5. Edge rules.
    - In the linked Vercel project, run `vercel firewall status` and `vercel firewall bot-management`. Look for the AI Bots managed ruleset in Deny mode, Bot Protection, custom rules that match user agents or AI bot categories, and attack mode. Complete when you can state which rules touch AI bots, or that none do.
